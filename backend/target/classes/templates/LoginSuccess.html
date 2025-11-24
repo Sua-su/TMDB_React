@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 성공</title>
+</head>
+<body>
+    <h1>🎉 로그인 성공!</h1>
+    <p th:text="'환영합니다, ' + ${loginUser.memName} + '님!'"></p>
+    <p th:text="'회원 등급: ' + ${loginUser.memRank}"></p>
+    <p th:text="'회원 번호: ' + ${loginUser.memNo}"></p>
+
+    <hr/>
+    <a th:href="@{/user/login}">로그아웃 / 돌아가기</a>
+</body>
+</html>

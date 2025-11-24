@@ -1,0 +1,11 @@
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/app/LotteryApplication.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/config/SecurityConfig.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/controller/UserController.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/domain/User.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/dto/FindPasswordRequest.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/dto/LoginRequest.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/impl/UserServiceImpl.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/mapper/UserMapper.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/repository/UserRepository.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/service/UserAuthService.java
+/Users/su/Documents/LotteryRoom/backend/src/main/java/com/lottery/user/service/UserVO.java

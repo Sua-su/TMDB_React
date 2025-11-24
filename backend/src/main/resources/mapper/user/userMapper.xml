@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lottery.user.mapper.UserMapper">
+
+   <!-- 전체 회원 목록 -->
+  <select id="userList" resultType="com.lottery.user.service.UserVO">
+    SELECT 
+        MEM_NO    AS memNo,
+        MEM_NAME  AS memName,
+        MEM_PHONE AS memPhone,
+        MEM_ID    AS memId,
+        MEM_PWD   AS memPwd,
+        MEM_REG   AS memReg,
+        MEM_BIRTH AS memBirth,
+        MEM_RANK  AS memRank
+    FROM MEMBER
+    ORDER BY MEM_NO
+  </select>
+
+  <!-- 단일 회원 조회 -->
+  <select id="getUser" parameterType="String" resultType="com.lottery.user.service.UserVO">
+    SELECT 
+        MEM_NO    AS memNo,
+        MEM_NAME  AS memName,
+        MEM_PHONE AS memPhone,
+        MEM_ID    AS memId,
+        MEM_PWD   AS memPwd,
+        MEM_REG   AS memReg,
+        MEM_BIRTH AS memBirth,
+        MEM_RANK  AS memRank
+    FROM MEMBER
+    WHERE MEM_ID = #{memId}
+  </select>
+
+  <!-- 회원 등록 -->
+  <insert id="insertUser" parameterType="com.lottery.user.service.UserVO">
+    INSERT INTO MEMBER (
+        MEM_NO, MEM_NAME, MEM_PHONE, MEM_ID, MEM_PWD, MEM_REG, MEM_BIRTH, MEM_RANK
+    ) VALUES (
+        MEMBER_SEQ.NEXTVAL,
+        #{memName},
+        #{memPhone},
+        #{memId},
+        #{memPwd},
+        SYSDATE,
+        #{memBirth},
+        #{memRank}
+    )
+  </insert>
+
+  <!-- 회원 수정 -->
+  <update id="updateUser" parameterType="com.lottery.user.service.UserVO">
+    UPDATE MEMBER
+    SET MEM_NAME  = #{memName},
+        MEM_PHONE = #{memPhone},
+        MEM_PWD   = #{memPwd},
+        MEM_RANK  = #{memRank}
+    WHERE MEM_ID = #{memId}
+  </update>
+
+  <!-- 회원 삭제 -->
+  <delete id="deleteUser" parameterType="String">
+    DELETE FROM MEMBER WHERE MEM_ID = #{memId}
+  </delete>
+
+  <!-- 로그인 확인 -->
+  <select id="loginCheck" resultType="com.lottery.user.service.UserVO">
+    SELECT 
+        MEM_NO    AS memNo,
+        MEM_NAME  AS memName,
+        MEM_PHONE AS memPhone,
+        MEM_ID    AS memId,
+        MEM_PWD   AS memPwd,
+        MEM_REG   AS memReg,
+        MEM_BIRTH AS memBirth,
+        MEM_RANK  AS memRank
+    FROM MEMBER
+    WHERE MEM_ID = #{memId}
+      AND MEM_PWD = #{memPwd}
+  </select>
+
+</mapper>
