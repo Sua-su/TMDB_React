@@ -55,8 +55,8 @@ const LoginPage = () => {
       
       if (result.success) {
         alert('로그인 성공!');
-        // 메인 페이지로 이동 (나중에 메인 페이지 경로로 변경)
-        navigate('/');
+        // 메인 페이지로 이동
+        navigate('/main');
       } else {
         setError(result.message || '로그인에 실패했습니다.');
       }
