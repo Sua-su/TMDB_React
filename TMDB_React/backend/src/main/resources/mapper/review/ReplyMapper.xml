@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.lottery.review.ReplyMapper">
+
+    <select id="selectReplyList" parameterType="int" resultType="com.lottery.review.ReplyDTO">
+        SELECT 
+            reply_no AS replyNo,
+            board_no AS boardNo,
+            member_id AS memberId,
+            reply_content AS replyContent,
+            evaluation,
+            reg_date AS regDate
+        FROM rv_reply
+        WHERE board_no = #{boardNo}
+        ORDER BY reply_no ASC
+    </select>
+
+    <insert id="insertReply" parameterType="com.lottery.review.ReplyDTO">
+        INSERT INTO rv_reply (
+            board_no, member_id, reply_content, evaluation
+        ) VALUES (
+            #{boardNo}, #{memberId}, #{replyContent}, #{evaluation}
+        )
+    </insert>
+
+</mapper>
