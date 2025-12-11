@@ -30,3 +30,127 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# ======================================
+# OS / 시스템 메타데이터
+# ======================================
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+ehthumbs.db
+*.swp
+*.swo
+
+# ======================================
+# Editor / IDE 메타데이터
+# ======================================
+.idea/
+*.iml
+*.iws
+.vscode/
+.project
+.classpath
+.settings/
+.springBeans
+
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/shelf/
+.idea/**/dataSources/
+.idea/**/httpRequests/
+
+# ======================================
+# Git 자체 메타데이터
+# ======================================
+*.orig
+*.rej
+
+# ======================================
+# Java / Spring Boot (백엔드)
+# ======================================
+target/
+build/
+.mvn/wrapper/maven-wrapper.jar
+.gradle/
+build/
+!gradle-wrapper.jar
+spring-boot-devtools.properties
+lombok.config
+application-*.yml
+application-*.yaml
+application-*.properties
+logs/
+*.log
+*.out
+
+# ======================================
+# React / Node (프론트엔드)
+# ======================================
+node_modules/
+build/
+dist/
+.cache/
+.next/
+.vite/
+.vitepress/
+.env
+.env.*
+!.env.example
+yarn.lock
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+coverage/
+*.lcov
+
+# ======================================
+# Browsers / Tools 메타데이터
+# ======================================
+.puppeteer/
+chrome-data/
+.eslintcache
+.stylelintcache
+.cache/
+.parcel-cache/
+.babel-cache/
+storybook-static/
+out/
+
+# ======================================
+# OS / 서버 / 배포 메타데이터
+# ======================================
+docker-compose.override.yml
+.env.local
+.env.*.local
+k8s/
+*.kubeconfig
+nginx/logs/
+nginx/temp/
+
+# ======================================
+# Local DB / 개발 데이터
+# ======================================
+*.sqlite
+*.db
+*.db-journal
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.h2.db
+*.mv.db
+
+# ======================================
+# Optional: API Keys / Secrets / Keys
+# ======================================
+secrets.env
+credentials.json
+firebase-key.json
+*.keystore
+*.pem
+*.p12
+
+.metadata
