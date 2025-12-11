@@ -1,194 +1,129 @@
-HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-# ======================================
-# OS / 시스템 메타데이터
-# ======================================
+# OS / 시스템 공통
 .DS_Store
 Thumbs.db
 desktop.ini
 *.log
 *.tmp
-ehthumbs.db
 *.swp
 *.swo
+ehthumbs.db
 
-# ======================================
-# Editor / IDE 메타데이터
-# ======================================
-# IntelliJ IDEA / WebStorm / Android Studio
+# Git 메타데이터
+*.orig
+*.rej
+
+# IDE / 에디터 설정
+
+# IntelliJ / IDEA
 .idea/
 *.iml
+*.ipr
 *.iws
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/shelf/
+.idea/**/httpRequests/
+.idea/**/dataSources/
 
-# VS Code
+# VSCode
 .vscode/
 
 # Eclipse / STS
 .project
 .classpath
 .settings/
+.apt_generated
+.factorypath
 .springBeans
+.sts4-cache
 
-# JetBrains 메타데이터 캐시
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/shelf/
-.idea/**/dataSources/
-.idea/**/httpRequests/
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
 
-# ======================================
-# Git 자체 메타데이터
-# ======================================
-*.orig
-*.rej
-
-# ======================================
 # Java / Spring Boot (백엔드)
-# ======================================
-# Build output
+
+# Build results
 target/
 build/
 
-# Maven wrapper 다운로드 파일
+# Maven
 .mvn/wrapper/maven-wrapper.jar
 
 # Gradle
 .gradle/
-build/
 !gradle-wrapper.jar
 
-# Spring Boot devtools metadata
-spring-boot-devtools.properties
-
-# Lombok
-lombok.config
-
-# Application 설정 파일 (민감정보 포함 가능)
+# Spring Boot sensitive configs
 application-*.yml
 application-*.yaml
 application-*.properties
 
-# Logs / temp
+# Logs
 logs/
-*.log
 *.out
 
-# ======================================
-# React / Node (프론트엔드)
-# ======================================
-# Node modules
-node_modules/
+# Lombok
+lombok.config
 
-# Build output
-build/
+# React / Node.js (프론트엔드)
+snode_modules/
 dist/
-
-# CRA / Next.js / Vite 캐시
+build/
 .cache/
 .next/
 .vite/
 .vitepress/
 
-# Env files (보안 이유)
+# Environment variables
 .env
 .env.*
 !.env.example
 
-# Package manager metadata
-yarn.lock
+# Logs
 npm-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .pnpm-store/
 
-# Test / coverage
+# Test coverage
 coverage/
 *.lcov
 
-# ======================================
-# Browsers / Tools 메타데이터
-# ======================================
-# Chrome / Puppeteer 메타데이터
+# Tools / Bundlers / Frameworks
 .puppeteer/
 chrome-data/
-
-# ESLint / Prettier
 .eslintcache
 .stylelintcache
-
-# Webpack / Babel
-.cache/
 .parcel-cache/
 .babel-cache/
-
-# Storybook
 storybook-static/
 out/
 
-# ======================================
-# OS / 서버 / 배포 메타데이터
-# ======================================
-# Docker
+# Docker / Kubernetes / 서버 배포 관련
 docker-compose.override.yml
 .env.local
 .env.*.local
-
-# Kubernetes
 k8s/
 *.kubeconfig
-
-# nginx
 nginx/logs/
 nginx/temp/
 
-# ======================================
-# Local DB / 개발 데이터
-# ======================================
+# Local Databases
 *.sqlite
+*.sqlite3
 *.db
 *.db-journal
-*.sqlite3
 *.sqlite-wal
 *.sqlite-shm
-
-# H2
 *.h2.db
 *.mv.db
 
-# ======================================
-# Optional: API Keys / Secrets / Keys
-# ======================================
+# Secrets / Keys
 secrets.env
 credentials.json
 firebase-key.json
@@ -196,5 +131,3 @@ firebase-key.json
 *.pem
 *.p12
 
-
-.metadata
