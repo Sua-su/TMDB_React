@@ -154,3 +154,5 @@ firebase-key.json
 *.p12
 
 .metadata
+
+.DS_Store
