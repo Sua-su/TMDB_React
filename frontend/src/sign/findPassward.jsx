@@ -52,7 +52,8 @@ const FindPasswordPage = () => {
       
       if (result.success) {
         // 일치하는 사용자를 찾았을 때
-        setFoundPassword(result.password);
+        alert(result.message || '계정을 찾았습니다. 임시 비밀번호가 이메일로 발송됩니다.');
+        setFoundPassword('success'); // 성공 표시용
       } else {
         // 일치하는 사용자를 찾지 못했을 때
         setError(result.message || '입력하신 이름과 이메일에 해당하는 계정을 찾을 수 없습니다.');
@@ -79,8 +80,8 @@ const FindPasswordPage = () => {
       <div className="login-container">
         <div className="login-box">
           <div className="login-header">
-            <h2>비밀번호를 찾았습니다</h2>
-            <p>아래 정보를 확인해주세요</p>
+            <h2>비밀번호 찾기 완료</h2>
+            <p>계정을 찾았습니다</p>
           </div>
 
           <div style={{ textAlign: 'center', margin: '30px 0' }}>
@@ -89,7 +90,7 @@ const FindPasswordPage = () => {
               color: '#667eea', 
               marginBottom: '20px' 
             }}>
-              🔑
+              ✅
             </div>
             <div style={{ 
               backgroundColor: '#f8f9fa', 
@@ -114,14 +115,14 @@ const FindPasswordPage = () => {
                 fontSize: '1.1rem',
                 fontWeight: 'bold'
               }}>
-                <strong>비밀번호:</strong> {foundPassword}
+                임시 비밀번호가 이메일로 발송됩니다.
               </p>
             </div>
             <p style={{ 
               fontSize: '0.85rem', 
               color: '#888' 
             }}>
-              보안을 위해 로그인 후 비밀번호를 변경하시기 바랍니다.
+              이메일을 확인하신 후, 로그인 후 비밀번호를 변경하시기 바랍니다.
             </p>
           </div>
 

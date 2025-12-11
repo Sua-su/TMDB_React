@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.TMDB.review.mapper.ReviewMapper">
+
+    <select id="selectReviewList" resultType="com.TMDB.review.dto.ReviewDTO">
+        SELECT 
+            r.board_no AS boardNo,
+            r.member_id AS memberId,
+            r.board_title AS boardTitle,
+            r.board_content AS boardContent,
+            r.mv_no AS mvNo,
+            r.reg_date AS regDate,
+            m.title AS movieTitle
+        FROM rvboard r
+        LEFT JOIN movies m ON r.mv_no = m.tmdb_id
+        ORDER BY r.board_no DESC
+    </select>
+    
+    <insert id="insertReview" parameterType="com.TMDB.review.dto.ReviewDTO">
+        <selectKey keyProperty="boardNo" resultType="int" order="AFTER">
+            SELECT last_insert_rowid()
+        </selectKey>
+        INSERT INTO rvboard (
+            member_id, board_title, board_content, mv_no
+        ) VALUES (
+            #{memberId}, #{boardTitle}, #{boardContent}, #{mvNo}
+        )
+    </insert>
+
+    <select id="selectReviewDetail" parameterType="int" resultType="com.TMDB.review.dto.ReviewDTO">
+        SELECT 
+            r.board_no AS boardNo,
+            r.member_id AS memberId,
+            r.board_title AS boardTitle,
+            r.board_content AS boardContent,
+            r.mv_no AS mvNo,
+            r.reg_date AS regDate,
+            m.title AS movieTitle
+        FROM rvboard r
+        LEFT JOIN movies m ON r.mv_no = m.tmdb_id
+        WHERE r.board_no = #{boardNo}
+    </select>
+
+    <update id="updateReview" parameterType="com.TMDB.review.dto.ReviewDTO">
+        UPDATE rvboard
+        SET board_title = #{boardTitle},
+            board_content = #{boardContent}
+        WHERE board_no = #{boardNo}
+    </update>
+
+    <delete id="deleteReview" parameterType="int">
+        DELETE FROM rvboard WHERE board_no = #{boardNo}
+    </delete>
+
+    <select id="selectReviewsByMovieId" parameterType="int" resultType="com.TMDB.review.dto.ReviewDTO">
+        SELECT
+            board_no AS boardNo,
+            member_id AS memberId,
+            board_title AS boardTitle,
+            board_content AS boardContent,
+            mv_no AS mvNo,
+            reg_date AS regDate
+        FROM rvboard
+        WHERE mv_no = #{mvNo}
+        ORDER BY board_no DESC
+    </select>
+</mapper>

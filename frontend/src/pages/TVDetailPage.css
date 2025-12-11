@@ -1,0 +1,95 @@
+.tv-detail-page {
+  padding: 2rem 3rem;
+}
+
+/* Reusing movie detail page styles for consistency */
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--card-background);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.back-button:hover {
+  background-color: var(--hover-bg-color);
+  color: var(--text-primary);
+  border-color: #444;
+}
+
+.tv-detail-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .tv-detail-layout {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+
+.tv-poster-container {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.tv-poster-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-background);
+}
+
+.tv-info-container {
+  flex-grow: 1;
+}
+
+.tv-info-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin: 0 0 1rem 0;
+}
+
+.tv-info-container .tv-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.tv-info-container .tv-meta .tv-rating {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.tv-info-container .tv-overview {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 5rem 0;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
