@@ -1,0 +1,31 @@
+.review-list {
+    margin-top: 20px;
+}
+
+.review-item {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #007bff;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.review-content {
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+.review-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}

@@ -1,0 +1,137 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body, html {
+  background-color: #000;
+  color: #fff;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+.movie-card-body {
+  height: 500px; /* Hardcoded height for the card */
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card-text {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.movie-card-img-top {
+  max-height: 70%; /* Adjust this value as needed */
+  width: auto;
+  object-fit: contain;
+}
+
+#header-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+#logo-link {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+#logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+#logo:hover {
+  opacity: 0.8;
+}
+
+#header-container h1 {
+  margin: 0;
+  padding: 0;
+}
+
+#header-container h1 a {
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+#header-container h1 a:hover {
+  color: #61dafb;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: 0;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+  left: -70px; /* Adjust this value as needed */
+}
+
+.carousel-control-next {
+  right: -70px; /* Adjust this value as needed */
+}
+
+.cart-text-space {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limit the text to 3 lines */
+  height: 3em; /* Set a fixed height for the text container */
+  line-height: 1.0em; /* Set the line height to control the spacing */
+}

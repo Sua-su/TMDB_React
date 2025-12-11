@@ -1,0 +1,59 @@
+.board-detail-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.board-header {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.posts-list {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.posts-list table {
+    margin-bottom: 0;
+}
+
+.post-title-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-title-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.posts-list table tbody tr {
+    cursor: pointer;
+}
+
+.posts-list table tbody tr:hover .post-title-link {
+    color: #007bff;
+}
+
+.post-actions {
+    display: flex;
+    gap: 5px;
+}
