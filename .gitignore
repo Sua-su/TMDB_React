@@ -1,4 +1,6 @@
+# ======================================
 # OS / 시스템 공통
+# ======================================
 .DS_Store
 Thumbs.db
 desktop.ini
@@ -8,11 +10,15 @@ desktop.ini
 *.swo
 ehthumbs.db
 
+# ======================================
 # Git 메타데이터
+# ======================================
 *.orig
 *.rej
 
+# ======================================
 # IDE / 에디터 설정
+# ======================================
 
 # IntelliJ / IDEA
 .idea/
@@ -45,33 +51,24 @@ ehthumbs.db
 /nbdist/
 /.nb-gradle/
 
+# ======================================
 # Java / Spring Boot (백엔드)
+# ======================================
 
 # Build results
 target/
 build/
 
-# Maven
-.mvn/wrapper/maven-wrapper.jar
-
-# Gradle
-.gradle/
-!gradle-wrapper.jar
-
-# Spring Boot sensitive configs
-application-*.yml
-application-*.yaml
-application-*.properties
 
 # Logs
 logs/
 *.out
 
-# Lombok
-lombok.config
 
+# ======================================
 # React / Node.js (프론트엔드)
-snode_modules/
+# ======================================
+node_modules/
 dist/
 build/
 .cache/
@@ -95,6 +92,7 @@ coverage/
 *.lcov
 
 # Tools / Bundlers / Frameworks
+# 
 .puppeteer/
 chrome-data/
 .eslintcache
