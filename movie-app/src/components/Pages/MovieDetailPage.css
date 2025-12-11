@@ -1,44 +1,165 @@
+/* 1. 전체 컨테이너 */
 .movie-detail-container {
-    padding: 20px;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    color: white; /* 기본 텍스트 색상 */
 }
 
+/* 2. 영화 헤더 섹션 (상단 정보) */
 .movie-header {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #333; /* 다크 배경 */
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #444;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
 }
 
+/* 3. 영화 포스터 */
 .movie-poster {
     width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    border: 1px solid #444;
+    transition: transform 0.3s ease;
+}
+
+.movie-poster:hover {
+    transform: scale(1.02);
+}
+
+/* 4. 영화 제목 및 태그라인 */
+.movie-header h1 {
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+    letter-spacing: -1px;
 }
 
 .movie-tagline {
     font-style: italic;
-    color: #666;
-    margin: 10px 0;
+    color: #53ef12; /* 네온 그린 포인트 */
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    border-left: 3px solid #53ef12;
+    padding-left: 15px;
 }
 
-.movie-info {
-    margin: 20px 0;
+/* 5. 뱃지 스타일 (Bootstrap 오버라이딩) */
+.movie-header .badge {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    font-weight: bold;
 }
 
-.movie-genres {
-    margin: 15px 0;
+/* 평점 뱃지 */
+.movie-header .bg-primary {
+    background-color: rgba(83, 239, 18, 0.15) !important;
+    color: #53ef12 !important;
+    border: 1px solid #53ef12;
+}
+
+/* 개봉일 뱃지 */
+.movie-header .bg-secondary {
+    background-color: #444 !important;
+    color: #ddd !important;
+    border: 1px solid #555;
+}
+
+/* 상영시간 뱃지 */
+.movie-header .bg-info {
+    background-color: rgba(97, 218, 251, 0.15) !important;
+    color: #61dafb !important; /* 리액트 블루 */
+    border: 1px solid #61dafb;
+}
+
+/* 장르 뱃지 */
+.movie-genres .badge.bg-dark {
+    background-color: #222 !important;
+    color: #aaa !important;
+    border: 1px solid #444;
+    margin-bottom: 5px;
+}
+
+/* 6. 줄거리 텍스트 */
+.movie-header h4 {
+    margin-top: 30px;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .movie-overview {
-    line-height: 1.6;
-    color: #444;
+    line-height: 1.8;
+    color: #ccc;
+    font-size: 1.05rem;
 }
 
+/* 7. 추천 버튼 (btn-success 오버라이딩) */
+.movie-header .btn-success {
+    background-color: #53ef12;
+    border-color: #53ef12;
+    color: #2A2A2A;
+    font-weight: 800;
+    padding: 10px 25px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border-radius: 8px;
+}
+
+.movie-header .btn-success:hover {
+    background-color: #42c90e;
+    border-color: #42c90e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(83, 239, 18, 0.4);
+}
+
+/* 8. 리뷰 섹션 컨테이너 */
 .reviews-section {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    background-color: #333; /* 다크 배경 */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid #444;
+    border-top: 5px solid #53ef12; /* 상단 포인트 라인 */
+}
+
+/* 리뷰 섹션 제목 */
+.reviews-section h3 {
+    color: white;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* 리뷰 작성 버튼 (btn-primary 오버라이딩) */
+.reviews-section .btn-primary {
+    background-color: transparent;
+    border: 2px solid #53ef12;
+    color: #53ef12;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.reviews-section .btn-primary:hover {
+    background-color: #53ef12;
+    color: #2A2A2A;
+    box-shadow: 0 0 10px rgba(83, 239, 18, 0.3);
+}
+
+/* 9. 로그인 안내 텍스트 */
+.reviews-section .text-muted {
+    color: #888 !important;
+}
+
+/* 10. 로딩 및 에러 상태 */
+.text-center.p-5 {
+    color: white;
+    font-size: 1.2rem;
 }

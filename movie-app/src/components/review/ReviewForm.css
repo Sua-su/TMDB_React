@@ -1,34 +1,151 @@
+/* 1. 폼 컨테이너 (다크 모드 카드 스타일) */
 .review-form-container {
-    background: #f8f9fa;
-    padding: 25px;
-    border-radius: 8px;
+    background-color: #333;
+    padding: 30px;
+    border-radius: 12px;
     margin-bottom: 30px;
+    border: 1px solid #444;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
+/* 2. 제목 스타일 (h4) */
+.review-form-container h4 {
+    color: #53ef12; /* 네온 그린 포인트 */
+    font-weight: 800;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 15px;
+}
+
+/* 3. 라벨 스타일 (Bootstrap form-label 덮어쓰기) */
+.review-form-container .form-label {
+    color: #53ef12;
+    font-weight: bold;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+/* 4. 평점 버튼 컨테이너 */
 .rating-selector {
     display: flex;
-    gap: 5px;
+    gap: 8px;
     margin: 10px 0;
+    flex-wrap: wrap; /* 모바일 대응 */
 }
 
+/* 5. 평점 버튼 스타일 */
 .rating-btn {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #ddd;
-    background: white;
-    border-radius: 5px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #555;
+    background-color: #222; /* 어두운 배경 */
+    color: #aaa;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
-    transition: all 0.2s;
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
 
+/* 평점 버튼 호버 효과 */
 .rating-btn:hover {
-    border-color: #007bff;
-    transform: scale(1.1);
+    border-color: #53ef12;
+    color: #53ef12;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(83, 239, 18, 0.2);
 }
 
+/* 선택된 평점 버튼 (Selected) */
 .rating-btn.selected {
-    background: #007bff;
+    background-color: #53ef12;
+    color: #2A2A2A; /* 글자색은 어둡게 */
+    border-color: #53ef12;
+    font-weight: 900;
+    box-shadow: 0 0 10px rgba(83, 239, 18, 0.4);
+    transform: scale(1.05);
+}
+
+/* 6. 텍스트 입력창 (Bootstrap form-control 덮어쓰기) */
+.review-form-container .form-control {
+    background-color: #222;
+    border: 1px solid #555;
     color: white;
-    border-color: #007bff;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 1rem;
+    resize: none; /* 크기 조절 방지 */
+}
+
+.review-form-container .form-control:focus {
+    background-color: #222;
+    border-color: #53ef12;
+    color: white;
+    box-shadow: 0 0 0 2px rgba(83, 239, 18, 0.2);
+    outline: none;
+}
+
+.review-form-container .form-control::placeholder {
+    color: #777;
+}
+
+/* 7. 하단 텍스트 (글자수 등) */
+.review-form-container .text-muted {
+    color: #aaa !important;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: block;
+}
+
+/* 8. 버튼 스타일 (저장/취소) */
+.review-form-container .btn {
+    padding: 10px 25px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+/* Primary 버튼 (저장/수정) */
+.review-form-container .btn-primary {
+    background-color: #53ef12;
+    border-color: #53ef12;
+    color: #2A2A2A;
+}
+
+.review-form-container .btn-primary:hover:not(:disabled) {
+    background-color: #42c90e;
+    border-color: #42c90e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(83, 239, 18, 0.3);
+}
+
+.review-form-container .btn-primary:disabled {
+    background-color: #444;
+    border-color: #444;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Secondary 버튼 (취소) */
+.review-form-container .btn-secondary {
+    background-color: #444;
+    border-color: #444;
+    color: #ddd;
+}
+
+.review-form-container .btn-secondary:hover {
+    background-color: #555;
+    border-color: #555;
+    color: white;
+}
+
+/* 9. 에러 메시지 (Alert) */
+.review-form-container .alert-danger {
+    background-color: rgba(255, 85, 85, 0.1);
+    border: 1px solid #ff5555;
+    color: #ff5555;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
