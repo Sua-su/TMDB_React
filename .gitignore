@@ -129,3 +129,10 @@ firebase-key.json
 *.pem
 *.p12
 
+.metadata/
+.DS_store
+.DS_Store
+.metadata/
+*/.metadata/
+.DS_Store
+*/.DS_Store

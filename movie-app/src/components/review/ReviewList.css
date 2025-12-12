@@ -1,31 +1,129 @@
+/* 1. 리뷰 리스트 컨테이너 */
 .review-list {
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
+/* 2. 리뷰 없음 (Empty State) 텍스트 */
+.review-list + .text-center.text-muted,
+.text-center.text-muted {
+    color: #888 !important;
+    padding: 40px 0;
+    font-size: 1.1rem;
+}
+
+/* 3. 개별 리뷰 아이템 (카드) */
 .review-item {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border-left: 4px solid #007bff;
+    background-color: #333; /* 다크 배경 */
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 0; /* gap으로 간격 조정하므로 0 */
+    border: 1px solid #444;
+    border-left: 5px solid #53ef12; /* 포인트 컬러 (네온 그린) */
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.review-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    background-color: #383838;
+}
+
+/* 4. 리뷰 헤더 (작성자, 평점, 날짜) */
 .review-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #444;
 }
 
+.review-header strong {
+    font-size: 1.1rem;
+    margin-right: 10px;
+    color: white;
+}
+
+/* 평점 뱃지 (Bootstrap .badge .bg-warning 덮어쓰기) */
+.review-header .badge {
+    background-color: rgba(245, 197, 24, 0.15) !important; /* 투명한 노란 배경 */
+    color: #f5c518 !important; /* 별점은 노란색 유지 (가독성) */
+    border: 1px solid #f5c518;
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+/* 날짜 텍스트 (Bootstrap .text-muted 덮어쓰기) */
+.review-header .text-muted {
+    color: #aaa !important;
+    font-size: 0.85rem;
+}
+
+/* 5. 리뷰 본문 */
 .review-content {
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 15px;
-    white-space: pre-wrap;
+    line-height: 1.7;
+    color: #e0e0e0; /* 밝은 회색 텍스트 */
+    margin-bottom: 20px;
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+    font-size: 1rem;
 }
 
+/* 6. 버튼 액션 컨테이너 */
 .review-actions {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+/* --- 버튼 스타일 오버라이딩 (Bootstrap btn-outline-* 대응) --- */
+
+/* 기본 버튼 공통 */
+.review-actions .btn-sm {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+/* 수정 버튼 (Primary -> Neon Green) */
+.review-actions .btn-outline-primary {
+    color: #53ef12;
+    border-color: #53ef12;
+}
+
+.review-actions .btn-outline-primary:hover {
+    background-color: #53ef12;
+    color: #2A2A2A;
+    border-color: #53ef12;
+}
+
+/* 삭제 버튼 (Danger -> Red) */
+.review-actions .btn-outline-danger {
+    color: #ff5555;
+    border-color: #ff5555;
+}
+
+.review-actions .btn-outline-danger:hover {
+    background-color: #ff5555;
+    color: white;
+    border-color: #ff5555;
+}
+
+/* 댓글 보기/숨기기 버튼 (Secondary -> Gray) */
+.review-actions .btn-outline-secondary {
+    color: #ccc;
+    border-color: #666;
+}
+
+.review-actions .btn-outline-secondary:hover {
+    background-color: #666;
+    color: white;
+    border-color: #666;
 }
