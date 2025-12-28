@@ -9,6 +9,9 @@ desktop.ini
 *.swp
 *.swo
 ehthumbs.db
+.metadata
+
+
 
 # ======================================
 # Git 메타데이터
@@ -43,6 +46,9 @@ ehthumbs.db
 .factorypath
 .springBeans
 .sts4-cache
+.idea
+
+
 
 # NetBeans
 /nbproject/private/
