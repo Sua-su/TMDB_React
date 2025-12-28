@@ -1,32 +1,121 @@
+/* 1. 전체 컨테이너 */
 .board-list-container {
-    padding: 30px;
+    padding: 40px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    color: white; /* 기본 텍스트 흰색 */
+    min-height: 80vh; /* 화면 꽉 차게 */
 }
 
+/* 2. 페이지 제목 (h2) */
+.board-list-container h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 40px;
+    border-left: 5px solid #53ef12; /* 왼쪽 네온 포인트 라인 */
+    padding-left: 20px;
+    letter-spacing: -1px;
+}
+
+/* 3. 게시판 카드 (Board Card) */
 .board-card {
-    background: white;
+    background-color: #333; /* 다크 카드 배경 */
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px; /* 둥근 모서리 */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
     height: 100%;
-    color: #333;
+    border: 1px solid #444; /* 미세한 테두리 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
 }
 
+/* 카드 호버 효과 */
 .board-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-7px); /* 위로 떠오름 */
+    box-shadow: 0 10px 20px rgba(83, 239, 18, 0.15); /* 네온 그림자 */
+    border-color: #53ef12; /* 테두리 네온색 변경 */
+    background-color: #383838;
 }
 
+/* 4. 게시판 제목 (h4) */
 .board-card h4 {
-    color: #007bff;
+    color: #53ef12; /* 네온 그린 텍스트 */
+    font-weight: 800;
+    font-size: 1.4rem;
     margin-bottom: 15px;
+    transition: color 0.3s;
 }
 
+.board-card:hover h4 {
+    text-shadow: 0 0 10px rgba(83, 239, 18, 0.4); /* 호버 시 텍스트 발광 */
+}
+
+/* 5. 게시판 설명 텍스트 (p) */
+.board-card p.text-muted {
+    color: #ccc !important; /* 부트스트랩 muted 덮어쓰기 (잘 보이게) */
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    flex-grow: 1; /* 내용이 적어도 하단 라인 위치 고정 */
+}
+
+/* 6. 하단 통계 영역 (Stats) */
 .board-stats {
-    margin-top: 15px;
+    margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #eee;
-    color: #666;
+    border-top: 1px solid #444; /* 구분선 어둡게 */
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.board-stats span {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+/* 7. 링크 스타일 초기화 */
+.board-list-container a {
+    text-decoration: none !important;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* 8. 초기화 버튼 및 로딩 메시지 */
+.board-list-container .btn-primary {
+    background-color: #53ef12;
+    border-color: #53ef12;
+    color: #2A2A2A;
+    font-weight: 800;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.board-list-container .btn-primary:hover {
+    background-color: #42c90e;
+    border-color: #42c90e;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(83, 239, 18, 0.4);
+}
+
+/* 게시판 없음/로딩 텍스트 */
+.text-center {
+    color: #aaa;
+    font-size: 1.2rem;
+}
+
+.board-list-container h3 {
+    color: white;
+    margin-bottom: 20px;
 }
