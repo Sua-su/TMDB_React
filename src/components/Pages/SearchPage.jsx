@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { SearchProvider } from '../context/SearchContext';
-import { HistoryProvider } from '../searchStates/HistoryContext';
 
 import DatePick from '../searchStates/DatePick';
 import GenreChoose from '../searchStates/GenreChoose';
@@ -39,11 +38,7 @@ function SearchPage() {
                     <Route path="/*" element={<SearchMovie setUrl={handleUrlChange} />} />
                     <Route path="/genre-choose" element={<GenreChoose setUrl={handleUrlChange} />} />
                     <Route path="/date-pick" element={<DatePick setUrl={handleUrlChange} />} />
-                    <Route path="/actor-search" element={
-                        <HistoryProvider>
-                            <SearchActor setUrl={handleUrlChange} />
-                        </HistoryProvider>
-                    } />
+                    <Route path="/actor-search" element={<SearchActor setUrl={handleUrlChange} />} />
                 </Routes>
             </SearchProvider>
             {loading ? (
